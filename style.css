@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(315deg, #f87cae 0%, #f18478 74%); 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.background_img{
+    position:absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 48vh;
+    max-height: 390px;
+    z-index: -1;
+}
+.background_img img{
+  width: 100%;
+  height: 100%;
+}
+.todo_container{
+    /* background-color: aqua; */
+    width: 100%;
+    max-width: 700px;
+    /* height: 400px; */
+    /* margin: 0px 30px; */
+    margin-top: 30px;
+
+}
+.todo-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#todo-title{
+    font-size: 45px;
+    font-weight:700;
+color: rgb(255, 30, 0);
+text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
+                 0px -5px 35px rgba(255,255,255,0.8);
+}
+#sun-theme{
+    height: 90px;
+    width: 90px;
+}
+
+@keyframes rotating{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#sun-theme img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border:1px solid rgb(255, 217, 0);
+    animation-name: rotating;
+	animation-timing-function: linear;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+.input-container form{
+    margin-top: 15px;
+    min-height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-input{
+    width: 100%;
+    height: 3rem;
+    font-size: 1.6em;
+    padding-left: 4vw;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 5px -4px #272324 ,-5px 3px #8a969c;
+
+}
+.todo-button{
+    width: 6rem;
+    height: 3rem;
+    margin-left: 4vw;
+    font-size: 1.3em;
+}
+.todo-input::placeholder { 
+    color: #0011f8;
+    text-shadow: 2px 8px 6px rgba(247, 24, 24, 0.6);
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .todo-button{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, #ff9292 0%, rgb(92, 84, 84) 100%);
+    color: #fff;
+    border:1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 0px 6px;
+    box-shadow: 3px -3px #3b3838 ,-3px 1px #8a969c;
+  }
+  .todo-button:hover{
+    color:rgb(0, 255, 179);
+    border:1px solid rgb(0, 255, 179);
+    background-image: linear-gradient(to right,rgb(92, 84, 84)  0%, #ff9292 100%);
+    box-shadow: 3px -3px  #8a969c ,-3px 1px #3b3838 ;
+    cursor: pointer;
+  }
+
+  

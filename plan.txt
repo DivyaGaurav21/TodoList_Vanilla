@@ -1,0 +1,4 @@
+1. Create the boxes and create banner background
+2. create the header
+3.create the input section
+4.create the todo Items list section
