@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="background_img">
-        <img src="./assets/background_img.png">
+        <img src="./assets/todo_background2.jpg">
      </div>
 
     <div class="todo_container">
@@ -39,6 +39,19 @@
             <i class="fa-solid fa-plus"></i>new
         </button>
     </form>
+   </div>
+   <!-- added list discription -->
+   <div class="your-list">
+    <div id="your-title">
+    <p id="para">Your ToDoS <i class="fa-solid fa-hand-point-down"></i></p>
+    </div>
+    <div class="select">
+       <select name="todos" id="filter-todo">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="uncompleted">Uncompleted</option>
+       </select>
+    </div>
    </div>
      <!-- last container for appending todos  -->
      <div class="todo-list-container">

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: linear-gradient(315deg, #f87cae 0%, #f18478 74%); 
+    background-image: linear-gradient(315deg, #f18787 0%, #0c0b0b 74%); 
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -16,8 +16,8 @@ body{
     top:0;
     left: 0;
     right: 0;
-    height: 48vh;
-    max-height: 390px;
+    height: 99.2vh;
+    opacity: .8;
     z-index: -1;
 }
 .background_img img{
@@ -25,12 +25,9 @@ body{
   height: 100%;
 }
 .todo_container{
-    /* background-color: aqua; */
     width: 100%;
     max-width: 700px;
-    /* height: 400px; */
-    /* margin: 0px 30px; */
-    margin-top: 30px;
+    margin-top: 15px;
 
 }
 .todo-header{
@@ -63,14 +60,14 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     height: 90px;
     width: 90px;
     border-radius: 50%;
-    border:1px solid rgb(255, 217, 0);
+    border:1.5px solid red;
     animation-name: rotating;
 	animation-timing-function: linear;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
 }
 .input-container form{
-    margin-top: 15px;
+    margin-top: 10px;
     min-height: 8vh;
     display: flex;
     justify-content: space-between;
@@ -83,10 +80,11 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     font-size: 1.6em;
     padding-left: 4vw;
     background-color: transparent;
-    border: 2px solid #fff;
+    border: 1.5px solid #fff;
     outline: none;
     border-radius: 10px;
-    box-shadow: 5px -4px #272324 ,-5px 3px #8a969c;
+    box-shadow: 5px -4px 4px #ff0707 ,-5px 3px 4px #181a1b;
+    color: #ffffff;
 
 }
 .todo-button{
@@ -97,7 +95,6 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
 }
 .todo-input::placeholder { 
     color: #0011f8;
-    text-shadow: 2px 8px 6px rgba(247, 24, 24, 0.6);
     font-family: 'Josefin Sans', sans-serif;
   }
 
@@ -118,32 +115,92 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     box-shadow: 3px -3px  #8a969c ,-3px 1px #3b3838 ;
     cursor: pointer;
   }
+
+  /* related css for your todos description  */
+  .your-list{
+    /* background-color: #d689ee; */
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
+  }
+  #para{
+   font-weight:600;
+   color: rgb(255, 15, 15);
+   text-shadow: -3px -1px 2px rgba(34, 32, 43, 0.9);
+   letter-spacing: 3px;
+  }
+/* related css select functanality in todo app */
+select{
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+outline: none;
+border: 2.8px solid #ff6f47;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 700;
+box-shadow: 3px -3px 4px #fd1f0f;
+}
+#filter-todo{
+    color:rgb(0, 17, 255);
+    width: 10rem;
+    height: 2rem;
+    padding-left: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color:transparent;
+}
+.select::after{
+    content: "\25BC";
+    position: relative;
+    background: #ff3c3c;
+    right:30px;
+    top: 4px;
+    font-size: 1.4rem;
+    color: #fff;
+    padding-top:5px ;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
   .todo-list-container{
-    background-color: #8990ee;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    /* justify-content: center; */
+    align-items:center;
+    margin-top: 10px;
+    width: 100%;
+    height: 64vh;
+    border: 1.5px solid red;
+    border-radius: 10px;
+    box-shadow:  2px -2px 5px #ff3728, -2px 2px 5px #f86c63;
+    overflow-y: scroll;
   }
+ 
 .todo-list{
     list-style: none;
     min-width: 100%;
 }
+.todo-list-container::-webkit-scrollbar {
+    display: none;
+  }
 .todo{
     margin: 5px;
-    background-color: white;
+    background-color:#f3576f;
+    color: #fff;
     display: flex;
     font-size: 1.5rem;
     justify-content: space-between;
     align-items: center;
     transition: all 1s ease ;
+    padding-left: 10px;
 }
 .todo li{
     flex:1;;
 }
 .trash-btn , .complete-btn{
-    background-color: #ff6f47;
+    background-color: #f73d0a;
     color: #fff;
     border: none;
     padding: 1rem;
@@ -151,7 +208,7 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     font-size: 1rem;
 }
 .complete-btn{
-    background-color: green;
+    background-color: rgb(196, 8, 243);
 }
 .fa-trash , .fa-check{
    pointer-events: none;
@@ -159,7 +216,7 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
 
 .completed{
     text-decoration: line-through;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 .fall{
     transform: translateY(8rem) rotateZ(20deg);

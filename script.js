@@ -9,15 +9,23 @@ todoButton.addEventListener("click" , addTodo);
 todoList.addEventListener("click" , deleteCheck);
 
 //functions
+
+
 function addTodo(event){
     // Prevent a link from opening the URL:(prevent form from submitting)
     event.preventDefault();
     //TODO div
+    //   if you entered empty input 
+if(todoInput.value === ""){
+    alert("please add todos");
+    return;
+  }
+
     const todoDiv = document.createElement('div');
     todoDiv.classList.add("todo");
     //create LI
     const newTodo = document.createElement('li');
-    newTodo.innerText = todoInput.value;
+   newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
     //check mark button
@@ -51,4 +59,5 @@ function deleteCheck(e){
   if(item.classList[0] == "complte-btn");
   const todo = item.parentElement;
   todo.classList.toggle("completed");
+
 }
