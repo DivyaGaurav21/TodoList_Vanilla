@@ -49,7 +49,7 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     height: 90px;
     width: 90px;
 }
-
+ /* aniamation keyframe  of sun  */
 @keyframes rotating{
 	0% {
 		transform: rotate(0deg);
@@ -79,6 +79,8 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     justify-content: space-between;
     align-items: center;
 }
+ 
+/* css for todo inpt  */
 
 .todo-input{
     width: 100%;
@@ -97,7 +99,7 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     color: #0011f8;
     font-family: 'Josefin Sans', sans-serif;
   }
-
+    /* todo buton css  */
   .todo-button{
     width: 6rem;
     height: 3rem;
@@ -112,6 +114,9 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     padding: 0px 6px;
     box-shadow: 3px -3px #3b3838 ,-3px 1px #8a969c;
   }
+ 
+/* hovering effect of todo button  */
+
   .todo-button:hover{
     color:rgb(0, 255, 179);
     border:1px solid rgb(0, 255, 179);
@@ -236,7 +241,7 @@ box-shadow: 3px -3px 4px #fd1f0f;
     opacity: 0;
 }
 
-
+/* git logo attached in corner  */
 
 .git-logo{
     position: absolute;
