@@ -1,30 +1,22 @@
+/* css for all universal element  */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-image: linear-gradient(315deg, #f18787 0%, #0c0b0b 74%); 
+    /* background-image: linear-gradient(315deg, #f18787 0%, #0c0b0b 74%);  */
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(rgba(82, 52, 14, 0.7),rgba(109, 30, 30, 0.7)),url('/assets/todo_background2.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
     font-family: 'Josefin Sans', sans-serif;
 }
-/* css for .background_img  */
-.background_img{
-    position:absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    height: 99.2vh;
-    opacity: .8;
-    z-index: -1;
-}
-.background_img img{
-  width: 100%;
-  height: 100%;
-}
+
 /* css for body container  */
 .todo_container{
     width: 100%;
@@ -49,7 +41,7 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     height: 90px;
     width: 90px;
 }
- /* aniamation keyframe  of sun  */
+ /* aniamation keyframe  of sun logo */
 @keyframes rotating{
 	0% {
 		transform: rotate(0deg);
@@ -58,10 +50,10 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
 		transform: rotate(360deg);
 	}
 }
-
+/* sun logo image setup css  */
 #sun-theme img{
-    height: 90px;
-    width: 90px;
+    height: 100%;
+    width: 100%;
     border-radius: 50%;
     border:1.5px solid red;
     animation-name: rotating;
@@ -95,8 +87,9 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     color: #ffffff;
 
 }
+/* todo input place holder  */
 .todo-input::placeholder { 
-    color: #0011f8;
+    color: #fff;
     font-family: 'Josefin Sans', sans-serif;
   }
     /* todo buton css  */
@@ -133,6 +126,7 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
     justify-content: space-around;
     font-size: 1.4rem;
   }
+
   #para{
    font-weight:600;
    color: rgb(255, 15, 15);
@@ -141,17 +135,15 @@ text-shadow: 2px 8px 6px rgba(7, 7, 7, 0.6),
   }
 /* related css select functanality in todo app */
 select{
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
 outline: none;
 border: 2.8px solid #ff6f47;
 font-family: 'Josefin Sans', sans-serif;
-font-weight: 700;
+font-weight: 500;
 box-shadow: 3px -3px 4px #fd1f0f;
 }
+/* css for filter todo  */
 .filter-todo{
-    color:rgb(0, 17, 255);
+    color:#fff;
     width: 10rem;
     height: 2rem;
     padding-left: 10px;
@@ -162,6 +154,7 @@ box-shadow: 3px -3px 4px #fd1f0f;
 .filter-todo option{
     background-color: #f3736a;
 }
+/* in select container appending content  */
 .select::after{
     content: "\25BC";
     position: relative;
@@ -185,13 +178,13 @@ box-shadow: 3px -3px 4px #fd1f0f;
     align-items:center;
     margin-top: 10px;
     width: 100%;
-    height: 63vh;
+    min-height: 55vh;
     border: 1.5px solid red;
     border-radius: 10px;
     box-shadow:  2px -2px 5px #ff3728, -2px 2px 5px #ee3325;
     overflow-y: scroll;
   }
- 
+ /* todo single list style css  */
 .todo-list{
     list-style: none;
     min-width: 100%;
@@ -231,11 +224,14 @@ box-shadow: 3px -3px 4px #fd1f0f;
 .fa-trash , .fa-circle-check{
    pointer-events: none;
 }
+/* after clicking as compleate 
+todo text css changes  */
 
 .completed{
     text-decoration: line-through;
     opacity: 0.7;
 }
+/* when a single todo item deleted then you will see this transformation  */
 .fall{
     transform: translateY(8rem) rotateZ(20deg);
     opacity: 0;
@@ -246,13 +242,14 @@ box-shadow: 3px -3px 4px #fd1f0f;
 .git-logo{
     position: absolute;
     /* background-color: #0011f8; */
-    right: 0px;
+    right: 10px;
     top: 20px;
-    overflow: hidden;
-    height: 100px;
+    overflow:visible;
+    height: 80px;
 }
+/* git logo link img setup  */
 #git-image img{
-    width: 130px;
+    width: 100px;
     height: 70px;
     transform: rotate(45deg);
 }
@@ -260,6 +257,7 @@ box-shadow: 3px -3px 4px #fd1f0f;
 
 
 /* css for responsiveness */
+/* media screen css less than 960px width  */
 @media screen and (max-width: 960px){
     .git-logo{
         position: absolute;
@@ -273,30 +271,57 @@ box-shadow: 3px -3px 4px #fd1f0f;
     }
     
 }
+/* media screen css less than 800px width  */
 @media screen and (max-width: 800px){
   body{
-    padding: 15px;
-   
-   
+    padding: 15px; 
   }
+  #todo-title{
+        font-size: 25px;
+        padding: 20px;
+    }
   body::-webkit-scrollbar {
     display: none;
   }
   .todo-list-container{
-    height: 62vh;
+    height: 55vh;
   }
   .todo_container{
     margin-top:0px ;
   }
-}@media screen and (max-width: 400px){
+  #sun-theme{
+    height: 65px;
+    width: 65px;
+  }
+}
+/* media screen css less than 450px width  */
+@media screen and (max-width: 450px){
     #todo-title{
         font-size: 25px;
         padding: 20px;
+    }
+    .filter-todo option{
+        font-size: 1rem;
     }
     #para{
         font-size: 20px;
     }
     .todo-list-container{
-        height: 70vh;
+        height: 60vh;
+        overflow:auto;
       }
+     #sun-theme{
+    height: 45px;
+    width: 45px;
+  }
+  .filter-todo *{
+    width: 100px;
+  }
+}
+/* media screen css less than 400px width  */
+@media screen and (max-width :400px) {
+    .select::after{
+        left: 140px;
+        top:-29px
+    }
 }

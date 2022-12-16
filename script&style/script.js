@@ -1,3 +1,4 @@
+// bby dom API we get element and store in variable 
 //selectors for todoInput , todobutton , todoList , and filter
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
@@ -5,10 +6,13 @@ const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
 
 
-//Event Listners 
-document.addEventListener('DOMContentLoaded' , getTodos);
+//Event Listners function will be call when certain event occurs 
+document.addEventListener('DOMContentLoaded', getTodos);
+// after clicking addtodo btn 
 todoButton.addEventListener("click", addTodo);
+// after clicking delete check button 
 todoList.addEventListener("click", deleteCheck);
+// filter todos in completed uncompleated and all on certain click event 
 filterOption.addEventListener("click", filterTodo);
 
 //functions for add newly created single todo
@@ -67,14 +71,17 @@ function deleteCheck(e) {
 }
 
 //for filtering list
+// this filterTOdo funcction will call when you click on filter 
 function filterTodo(e) {
   const todos = todoList.childNodes;
   // console.log(e.target.value);
   todos.forEach(function (todo) {
-    switch (e.target.value) {
+      switch (e.target.value) {
+        // when you choose all option 
       case "all":
         todo.style.display = "flex";
-        break;
+              break;
+        //   when you choose compleate option 
       case "completed":
         if (todo.classList.contains("completed")) {
           todo.style.display = "flex";
@@ -82,6 +89,7 @@ function filterTodo(e) {
           todo.style.display = "none";
         }
         break;
+        // when you click uncompleate
       case "uncompleted":   
         if (!todo.classList.contains("completed")) {
           todo.style.display = "flex";
@@ -97,25 +105,33 @@ function filterTodo(e) {
 const saveLocalTodos=(todo) => {
   let todos;
   //Check --> Hey DO I already have things in local Storage
-  if(localStorage.getItem('todos') === null){
+    if (localStorage.getItem('todos') === null) {
+    //   let take empty array 
     todos = [];
-  }else{
+    } else {
+        // fetch todos of local storage 
     todos = JSON.parse(localStorage.getItem('todos'));
-  }
-  todos.push(todo);
+    }
+    // push single todo in todos array 
+    todos.push(todo);
+    // finally put that todos array in browser local storage 
   localStorage.setItem('todos' , JSON.stringify(todos));
 }
 
 //function to get todo in localStorage and rendering on UI
+// this getTodos function will be call when the window browser is loaded 
 function getTodos(){
-  console.log('divya')
+//   console.log('divya')
   let todos;
   //Check --> Hey DO I already have things in local Storage
-  if(localStorage.getItem('todos') === null){
+    if (localStorage.getItem('todos') === null) {
+    //   if local storage is empty initialize empty array
     todos = [];
-  }else{
+    } else {
+        // get todos and for array 
     todos = JSON.parse(localStorage.getItem('todos'));
-  }
+    }
+    // for each item in array fom element and append 
   todos.forEach((todo) => {
   const todoDiv = document.createElement('div');
   todoDiv.classList.add("todo");
@@ -139,18 +155,21 @@ function getTodos(){
   })
 }
 
-//function for deleting each todos item (todo)
+//function for deleting each todos item (todo) in local storage 
 function removeLocalTodos(todo){
-  console.log('divya')
+//   console.log('divya')
   let todos;
   //Check --> Hey DO I already have things in local Storage
   if(localStorage.getItem('todos') === null){
     todos = [];
   }else{
     todos = JSON.parse(localStorage.getItem('todos'));
-  }
-  const targetTodo = todo.children[0].innerText;
-  todos.splice(todos.indexOf(targetTodo), 1);
+    }
+    // try to find target todo content 
+    const targetTodo = todo.children[0].innerText;
+    // and find the index of that content and delete that element in array by splice method of array 
+    todos.splice(todos.indexOf(targetTodo), 1);
+    // and set again this todos array in local storage 
   localStorage.setItem('todos' , JSON.stringify(todos))
 }
 
